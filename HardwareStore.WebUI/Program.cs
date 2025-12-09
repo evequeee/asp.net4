@@ -10,6 +10,9 @@ using MediatR;
 
 var builder = WebApplication.CreateBuilder(args);
 
+// Add ServiceDefaults (Serilog, OpenTelemetry, HealthChecks, ServiceDiscovery)
+builder.AddServiceDefaults();
+
 // Configure MongoDB Settings
 builder.Services.Configure<MongoDbSettings>(
     builder.Configuration.GetSection("MongoDbSettings"));
@@ -58,6 +61,9 @@ builder.Services.AddCors(options =>
 });
 
 var app = builder.Build();
+
+// Map ServiceDefaults endpoints (health checks, CorrelationId)
+app.MapDefaultEndpoints();
 
 // Seed Database
 using (var scope = app.Services.CreateScope())

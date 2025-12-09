@@ -19,6 +19,7 @@
   <ItemGroup>
     <ProjectReference Include="..\HardwareStore.Application\HardwareStore.Application.csproj" />
     <ProjectReference Include="..\HardwareStore.Infrastructure\HardwareStore.Infrastructure.csproj" />
+    <ProjectReference Include="..\HardwareStore.ServiceDefaults\HardwareStore.ServiceDefaults.csproj" />
   </ItemGroup>
 
 </Project>
